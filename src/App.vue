@@ -1,6 +1,7 @@
 <template>
   <header>
-    <Navbar/>
+    <Navbar />
+  
   </header>
     
 </template>
