@@ -1,19 +1,7 @@
 <template>
-    <nav class="bg-sky-100">
-        <div class="flex py-4 px-4">
-            <div class="flex items-center justify-between">
-                <div>
-                    <a href="#" class="flex nav-link mx-4">
-                        <Logo />
-                        <span class="font-bold">My Agent</span>
-                    </a>
-                </div>
-                
-                <div class="nav-link hidden md:flex mx-8">
-                    <Dropdown :options="options" :menu-list="menuList" />
-                </div>
-            </div>
-
+    <nav class="bg-sky-100 max-h-16 flex-1">
+        <div class="nav-link hidden md:flex mx-8">
+            <Dropdown :options="options" :menu-list="menuList" />
             <!-- mobile view -->
             <div class="md:hidden flex items-center">
                 <button class="mobile-menu-button">
@@ -29,8 +17,6 @@
 import Logo from './icons/Logo.vue'
 import LogoMenu from './icons/LogoMenu.vue';
 import Dropdown from './navigations/Dropdown.vue';
-
-
 const options = [1, 2, 3, 4, 5];
 const menuList = ['Menu', 'Master Data', 'modul utama', 'import transaksi', 'laporan', 'pengaturan']
 
