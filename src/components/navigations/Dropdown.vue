@@ -1,10 +1,11 @@
 <template>
-    <div class="dropdown-wrapper space-x-5">
-        <div v-for="(menu, index) in menuList" :key="index">
+    <div class="flex flex-1 items-center cursor-pointer">
+        <div class="px-3 select-none hover:shrink-0 hover:text-gray-950" v-for="(menu, index) in menuList" :key="index">
             <span @click="showList(index)">{{ menu }}</span>
-            <div class="option-wrapper " :class="{ hidden: !hide[index] }">
-                <div @click="close" class="option" v-for="(option, index) in options" :key="index">
+            <div class="absolute" :class="{ hidden: !hide[index] }">
+                <div @click="close" class="" v-for="(option, index) in options" :key="index">
                     {{ option }}
+                    
                 </div>
             </div>
         </div>
@@ -41,16 +42,5 @@ function close(){
 </script>
 
 <style scoped>
-.dropdown-wrapper {
-    @apply flex items-center justify-between cursor-pointer my-1 mx-auto;
-}
 
-.option-wrapper {
-    @apply cursor-pointer max-w-52 my-0 mx-auto absolute shadow-sm border border-zinc-300 box-border rounded-lg ;
-}
-
-
-.option {
-    @apply p-4 border-b border-zinc-300 hover:bg-slate-300;
-}
 </style>

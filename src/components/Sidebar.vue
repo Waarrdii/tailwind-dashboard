@@ -1,16 +1,17 @@
 <template>
-    <div class="relative min-h-screen bg-cyan-500  text-cyan-100  md:w-44">
+    <div class="relative min-h-screen bg-cyan-500  text-cyan-100 hidden md:flex md:w-44">
         <div>
-        <a href="#" class="flex nav-link mx-4">
-            <Logo />
-            <span class="font-bold">My Agent</span>
-        </a>
+            <a href="#" class="flex nav-link mx-4">
+                <Logo />
+                <span class="font-bold">My Agent</span>
+            </a>
+            <div class="">
+                ini sadebar
+            </div>
+        </div>
+
     </div>
-    <div class="">
-        ini sadebar
-    </div>
-    </div>
-    
+
 </template>
 
 <script setup>

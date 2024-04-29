@@ -1,5 +1,5 @@
 <template>
-  <header class="flex">
+  <header class="flex box-border">
     <Sidebar/>
     <Navbar/>
   </header>
