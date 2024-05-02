@@ -1,0 +1,9 @@
+{
+    "sidebar" : {
+        "pembelian" :["pesanan pembelian","faktur pembelian","retur pembelian"],
+        "penjualan" :["pesanan penjualan","faktur penjualan","retur penjualan"],
+        "buku besar" :["pembayaran lainnya","penerimaan lainnya","jurnal umum","buku bank"],
+        "persediaan" :["daftar persediaan","penyesuaian barang","pindah barang","pengelompokkan barang","gudang"],
+        "aktiva tetap" :[]
+    }
+}
