@@ -16,8 +16,8 @@
 <script setup>
 import LogoMenu from './icons/LogoMenu.vue';
 import Dropdown from './navigations/Dropdown.vue';
-const options = [1, 2, 3, 4, 5];
-const menuList = ['Menu', 'Master Data', 'modul utama', 'import transaksi', 'laporan', 'pengaturan']
+const options = ['Menu', 'Master Data', 'modul utama', 'import transaksi', 'laporan', 'pengaturan'];
+const menuList = ['Menu', 'Master Data', 'modul utama', 'import transaksi', 'laporan', 'pengaturan'];
 
 </script>
 
