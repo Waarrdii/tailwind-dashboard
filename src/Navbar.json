@@ -1,6 +1,5 @@
 {
-    "navbarItem": {
-        "menu": [
+    "menu": [
             "buat database baru",
             "buka database",
             "backup"
@@ -28,5 +27,4 @@
             "profil",
             "setting"
         ]
-    }
 }
