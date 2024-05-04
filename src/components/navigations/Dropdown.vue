@@ -1,10 +1,10 @@
 <template>
-    <div @mouseleave="close" class="flex items-center">
-        <div @mouseenter="showList(index)" class="px-3 select-none hover:shrink-0 hover:text-gray-950  cursor-pointer" v-for="(menu, index) in menuList" :key="index">
-            <span >{{ menu }}</span>
-            <div id="menu-list" class="absolute bg-slate-100 rounded shadow-sm" :class="{ hidden: !hide[index] }">
-                <div @click="close" class="my-1 hover:bg-slate-200" v-for="(option, index) in options" :key="index">
-                    {{ option }}  
+    <div class="flex items-center">
+        <div @click="showList(id),  $event"  class="px-3 select-none cursor-pointer" v-for="(item, id) in dataItem" :key="id">
+            <nav>{{ item.title }}</nav>
+            <div :class="{'hidden' : !item.status}" class="absolute mt-2 bg-slate-50 rounded shadow-md border ">
+                <div class="px-4 py-1 hover:bg-slate-100" v-for="(option, index) in item.list">
+                   <a href="#">{{ option }}</a> 
                 </div>
             </div>
         </div>
@@ -13,30 +13,51 @@
 
 <script setup>
 
-import { defineProps, ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
+import axios from 'axios'
 
-const props = defineProps({
-    options: {
-        type: Array,
-        required: true,
-    },
-    menuList: {
-        type: Array,
-        required: true,
-    }
+
+
+const dataItem = ref();
+
+onMounted(() => {
+    //mengambil data json.
+    axios.get('/Navbar.json') 
+        .then(function (response) {
+            dataItem.value = response.data.navbarItems;
+            //console.log(dataItem.value);
+
+
+        })
+        .catch(function (error) {
+            // handle error
+            console.log(error);
+        })
+        //menutup semua dropdown list yang terbuka ketika ada di clik diluar navbar
+        document.body.addEventListener('click',closeAllMenus);
 })
-const hide = ref(new Array(props.menuList.length).fill(false))
 
-function showList(index) {
-  hide.value = hide.value.map((value, i) => (i === index ? !value : false));
-  console.log(hide.value)
+//menghapus event listener ketika compononet tidak di pasang, agar tidak terjadi error.
+onUnmounted(()=>{
+    document.body.removeEventListener('click',closeAllMenus);
+})
+
+function showList(id){
+    event.stopPropagation(); //script ini untuk mencegah event click mencapai body element.
+    dataItem.value.forEach((item, index) => {
+        if(index === id) {
+            item.status = !item.status;
+        } else {
+            item.status = false;
+        }
+    });
 }
-
-function close(){
-    hide.value.fill(false)
+//fungsi untuk menutup semua dropdown list
+function closeAllMenus(){
+    dataItem.value.forEach(item =>{
+        item.status = false;
+    })
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

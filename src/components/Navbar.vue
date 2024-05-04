@@ -1,7 +1,7 @@
 <template>
     <nav class="bg-slate-50 shadow max-h-14 flex-1">
         <div class="text-gray-700 h-full mx-0 capitalize hidden lg:flex">
-            <Dropdown :options="options" :menu-list="menuList" />
+            <Dropdown/>
             <!-- mobile view -->
             <div class="lg:hidden flex items-center">
                 <button class="mobile-menu-button">
@@ -16,8 +16,8 @@
 <script setup>
 import LogoMenu from './icons/LogoMenu.vue';
 import Dropdown from './navigations/Dropdown.vue';
-const options = ['Menu', 'Master Data', 'modul utama', 'import transaksi', 'laporan', 'pengaturan'];
-const menuList = ['Menu', 'Master Data', 'modul utama', 'import transaksi', 'laporan', 'pengaturan'];
+
+
 
 </script>
 
