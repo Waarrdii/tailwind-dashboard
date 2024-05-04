@@ -1,22 +1,33 @@
 <template>
   <header class="flex box-border">
-    <div v-for="(item, index) in menuList" :key="index">
-      {{ item }}
+    <div class="mx-3 w-24 h-24 border " v-for="(item, id) in dataItem" :key="id">
+   {{ item.title }}
+   <div v-for="(i,index) in item.list" :key="index">
+    {{ i }}</div>
     </div>
+    
   </header>   
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
-import axios from 'axios';
-import navbarData from './Navbar.json'
+import { onMounted, ref } from 'vue';
+import axios from 'axios'
 
-const menuList = ref(null);
 
-onMounted(() => {
-  menuList.value = navbarData; // Menggunakan data yang diimpor
-  console.log(menuList.value);
-});
+const dataItem = ref();
+
+onMounted(()=>{
+  axios.get('../public/Navbar.json')
+  .then(function (response) {
+    dataItem.value = response.data.navbarItems;
+    console.log(dataItem.value);
+   
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+})
 
 </script>
 

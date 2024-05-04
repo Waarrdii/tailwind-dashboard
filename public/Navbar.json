@@ -1,0 +1,48 @@
+{
+    "navbarItems": [
+        {
+            "id": "1",
+            "title": "menu",
+            "list": [
+                "buat database baru",
+                "buka database",
+                "backup"
+            ]
+        },
+        {
+            "id": "2",
+            "title": "data",
+            "list": [
+                "pelanggan",
+                "pemasok",
+                "departemen",
+                "syarat pembayaran"
+            ]
+        },
+        {
+            "id": "3",
+            "title": "report",
+            "list": [
+                "laporan keuangan",
+                "buku besar",
+                "pembelian",
+                "penjualan",
+                "buku pembantu utang",
+                "buku pembantu piutang",
+                "persediaan",
+                "aktiva tetap",
+                "laporan departemen",
+                "Pajak",
+                "laporan tersimpan"
+            ]
+        },
+        {
+            "id": "4",
+            "title": "user",
+            "list": [
+                "profil",
+                "setting"
+            ]
+        }
+    ]
+}
