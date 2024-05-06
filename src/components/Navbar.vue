@@ -1,6 +1,6 @@
 <template>
-    <nav class="bg-slate-50 shadow max-h-14 flex-1">
-        <div class="text-gray-700 h-full mx-0 capitalize hidden lg:flex">
+    <nav class="bg-slate-700 text-gray-50 shadow h-11 flex-1">
+        <div class=" h-full mx-0 capitalize hidden lg:flex">
             <Dropdown/>
             <!-- mobile view -->
             <div class="lg:hidden flex items-center">

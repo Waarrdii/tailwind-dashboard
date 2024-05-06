@@ -4,7 +4,7 @@
             <nav>{{ item.title }}</nav>
             <div :class="{'hidden' : !item.status}" class="absolute mt-2 bg-slate-50 rounded shadow-md border ">
                 <div class="px-4 py-1 hover:bg-slate-100" v-for="(option, index) in item.list">
-                   <a href="#">{{ option }}</a> 
+                   <a class="text-gray-700" href="#">{{ option }}</a> 
                 </div>
             </div>
         </div>
