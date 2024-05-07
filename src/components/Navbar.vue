@@ -1,5 +1,5 @@
 <template>
-    <nav class="bg-slate-700 text-gray-50 shadow h-11 flex-1">
+    <nav class="bg-slate-700 text-gray-50 shadow h-12 flex-1">
         <div class=" h-full mx-0 capitalize hidden lg:flex">
             <Dropdown/>
             <!-- mobile view -->
