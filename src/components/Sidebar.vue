@@ -7,10 +7,10 @@
             <div class="flex-1 bg-slate-100 ">
                 <div class="h-14 relative overflow-hidden">
                     <div class="bg-slate-100">
-                        <div class="absolute -left-[10px] -top-12 h-24 w-24 rounded-full bg-cyan-500"></div>
+                        <div class="absolute -left-[5px] -top-20 h-32 w-32 rounded-full bg-cyan-500"></div>
                     </div>
                     <div class="bg-cyan-500 absolute -right-5">
-                        <div class=" h-24 w-24 rounded-l-2xl bg-slate-100"></div>
+                        <div class=" h-24 w-16 rounded-l-2xl bg-slate-100"></div>
                     </div>
                     
                 </div>
