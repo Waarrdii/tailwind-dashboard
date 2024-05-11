@@ -13,7 +13,10 @@
                     <div class="bg-white w-full h-full rounded-tl-[60%]"></div>
                 </div>
             </div>
-            <div class="flex flex-1 border-r border-slate-200 ">
+            <div class="flex flex-1 flex-col border-r border-slate-200 ">
+                <div v-for="item in SidebarData" :key="item.id">
+                    {{ item.title }}
+                </div>
             </div>
     </div>
 
@@ -21,6 +24,23 @@
 
 <script setup>
 import Logo from './icons/Logo.vue';
+
+import { onMounted, ref } from 'vue';
+import axios from 'axios';
+
+const SidebarData = ref(null);
+
+onMounted(()=>{
+    axios.get('/Sidebar.json')
+    .then(function(response){
+        SidebarData.value = response.data.sidebarItems
+        console.log(SidebarData.value)
+    })
+    .catch(function (error) {
+            // handle error
+            console.log(error);
+        })
+})
 
 </script>
 

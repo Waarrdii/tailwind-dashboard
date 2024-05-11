@@ -1,9 +1,34 @@
 {
-    "sidebar" : {
-        "pembelian" :["pesanan pembelian","faktur pembelian","retur pembelian"],
-        "penjualan" :["pesanan penjualan","faktur penjualan","retur penjualan"],
-        "buku besar" :["pembayaran lainnya","penerimaan lainnya","jurnal umum","buku bank"],
-        "persediaan" :["daftar persediaan","penyesuaian barang","pindah barang","pengelompokkan barang","gudang"],
-        "aktiva tetap" :["daftar aktiva"]
-    }
+    "sidebarItems": [
+        {
+            "id": "1",
+            "title": "pembelian",
+            "list": ["pesanan pembelian","faktur pembelian","retur pembelian"],
+            "status":false
+        },
+        {
+            "id": "2",
+            "title": "penjualan",
+            "list": ["pesanan penjualan","faktur penjualan","retur penjualan"],
+            "status":false
+        },
+        {
+            "id": "3",
+            "title": "buku besar",
+            "list": ["pembayaran lainnya","penerimaan lainnya","jurnal umum","buku bank"],
+            "status":false
+        },
+        {
+            "id": "4",
+            "title": "persediaan",
+            "list":["daftar persediaan","penyesuaian barang","pindah barang","pengelompokkan barang","gudang"],
+            "status":false
+        },
+        {
+            "id": "5",
+            "title": "aktiva tetap",
+            "list":["daftar aktiva"],
+            "status":false
+        }
+    ]
 }
