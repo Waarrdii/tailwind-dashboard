@@ -14,8 +14,11 @@
                 </div>
             </div>
             <div class="flex flex-1 flex-col border-r border-slate-200 ">
-                <div v-for="item in SidebarData" :key="item.id">
-                    {{ item.title }}
+                <div v-for="item in SidebarData" :key="item.id" class="flex items-center capitalize mt-3 first:mt-5">
+                    <img :src="item.icon" :alt="item.title" class="mx-3">
+                    <div>
+                        {{ item.title }}
+                    </div>                    
                 </div>
             </div>
     </div>
