@@ -14,12 +14,25 @@
                 </div>
             </div>
             <div class="flex flex-1 flex-col border-r border-slate-200 ">
-                <div v-for="item in SidebarData" :key="item.id" class="flex items-center capitalize mt-3 first:mt-5">
-                    <img :src="item.icon" :alt="item.title" class="mx-3">
-                    <div>
+                <details v-for="item in SidebarData"
+                :key="item.id"
+                :open="openedIndex === item.id"
+                class=" capitalize mt-3 first:mt-5 cursor-pointer"
+                >
+                    <summary 
+                    class="flex items-center hover:bg-slate-50 select-none"
+                    @click.prevent="handleToggle(item.id)"
+                    >
+                        <img :src="item.icon" :alt="item.title" class="mx-3">
                         {{ item.title }}
-                    </div>                    
-                </div>
+                    </summary>
+                    <div v-for="listItem, index in item.list" :key="index" class="flex">
+                        <div class="mx-[23px] border border-slate-100"></div>
+                        <a href="#">
+                            {{ listItem }}
+                        </a>
+                    </div>              
+                </details>
             </div>
     </div>
 
@@ -31,6 +44,7 @@ import Logo from './icons/Logo.vue';
 import { onMounted, ref } from 'vue';
 import axios from 'axios';
 
+let openedIndex = ref(null);
 const SidebarData = ref(null);
 
 onMounted(()=>{
@@ -44,6 +58,14 @@ onMounted(()=>{
             console.log(error);
         })
 })
+
+const handleToggle = (id)=>{
+    if (openedIndex.value === id){
+        openedIndex.value = null;
+    } else{
+        openedIndex.value = id;
+    }
+}
 
 </script>
 

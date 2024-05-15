@@ -3,28 +3,28 @@
         {
             "id": "1",
             "title": "pembelian",
-            "list": ["pesanan pembelian","faktur pembelian","retur pembelian"],
+            "list": ["pesanan","faktur","retur"],
             "icon" : "/icons/shopping_cart.svg" ,
             "status":false
         },
         {
             "id": "2",
             "title": "penjualan",
-            "list": ["pesanan penjualan","faktur penjualan","retur penjualan"],
+            "list": ["pesanan","faktur","retur"],
             "icon" : "/icons/shopping_bag.svg" ,
             "status":false
         },
         {
             "id": "3",
             "title": "buku besar",
-            "list": ["pembayaran lainnya","penerimaan lainnya","jurnal umum","buku bank"],
+            "list": ["pembayaran","penerimaan","jurnal umum","buku bank"],
             "icon" : "/icons/description.svg" ,
             "status":false
         },
         {
             "id": "4",
             "title": "persediaan",
-            "list":["daftar persediaan","penyesuaian barang","pindah barang","pengelompokkan barang","gudang"],
+            "list":["daftar","penyesuaian","pindah","pengelompokkan","gudang"],
             "icon" : "/icons/inventory.svg" ,
             "status":false
         },
