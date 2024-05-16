@@ -1,6 +1,6 @@
 <template>
     <div>
-        ini about
+        ini halaman Form Data
     </div>
 </template>
 

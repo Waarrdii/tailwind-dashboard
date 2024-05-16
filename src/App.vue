@@ -3,10 +3,6 @@
     <Sidebar/>
     <div class="flex-1">
       <Navbar/>
-      <div class="">
-        <router-link to="/about">about</router-link> |
-        <router-link to="/">home</router-link>
-      </div>
       <router-view></router-view>
     </div>
   </div>  

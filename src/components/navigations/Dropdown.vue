@@ -1,10 +1,10 @@
 <template>
     <div class="flex items-center">
-        <div @click="showList(id),  $event"  class="px-3 select-none cursor-pointer" v-for="(item, id) in dataItem" :key="id">
+        <div @click="showList(id, $event)"  class="px-3 select-none cursor-pointer" v-for="(item, id) in dataItem" :key="id">
             <nav>{{ item.title }}</nav>
             <div :class="{'hidden' : !item.status}" class="absolute mt-2 bg-slate-50 rounded shadow-md border ">
                 <div class="px-4 py-1 hover:bg-slate-100" v-for="(option, index) in item.list">
-                   <a class="text-gray-700" href="#">{{ option }}</a> 
+                   <router-link :to="'/' + option" class="text-gray-700" >{{ option }}</router-link> 
                 </div>
             </div>
         </div>
@@ -42,7 +42,7 @@ onUnmounted(()=>{
     document.body.removeEventListener('click',closeAllMenus);
 })
 
-function showList(id){
+function showList(id, event){
     event.stopPropagation(); //script ini untuk mencegah event click mencapai body element.
     dataItem.value.forEach((item, index) => {
         if(index === id) {
