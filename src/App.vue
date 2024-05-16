@@ -1,9 +1,16 @@
 <template>
-  <header class="flex box-border">
+  <div class="flex box-border">
     <Sidebar/>
-    <Navbar/>
-  </header>  
-   
+    <div class="flex-1">
+      <Navbar/>
+      <div class="">
+        <router-link to="/about">about</router-link> |
+        <router-link to="/">home</router-link>
+      </div>
+      <router-view></router-view>
+    </div>
+  </div>  
+
 </template>
 
 <script setup>

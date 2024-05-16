@@ -1,7 +1,5 @@
 <template>
-    <div>
-
-    </div>
+ini home
 </template>
 
 <script setup>
