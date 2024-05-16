@@ -4,7 +4,7 @@
             <nav>{{ item.title }}</nav>
             <div :class="{'hidden' : !item.status}" class="absolute mt-2 bg-slate-50 rounded shadow-md border ">
                 <div class="px-4 py-1 hover:bg-slate-100" v-for="(option, index) in item.list">
-                   <router-link :to="'/' + option" class="text-gray-700" >{{ option }}</router-link> 
+                   <router-link :to="'/' +toKebabCase(option)" class="text-gray-700" >{{ option }}</router-link> 
                 </div>
             </div>
         </div>
@@ -58,6 +58,17 @@ function closeAllMenus(){
         item.status = false;
     })
 }
+
+function toKebabCase(string) {
+    return `${string}`
+        .toLowerCase()
+        .replace(/[^a-zA-Z0-9\s]/g, '') // Menghapus karakter non-alfanumerik
+        .replace(/\s+/g, '-') // Mengganti spasi dengan tanda hubung
+        .replace(/-+/g, '-') // Mengganti beberapa tanda hubung berurutan dengan satu tanda hubung
+        .trim(); // Menghapus spasi di awal dan akhir string
+}
+
+
 </script>
 
 <style scoped></style>
