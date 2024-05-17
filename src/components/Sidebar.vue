@@ -50,7 +50,7 @@ onMounted(()=>{
     axios.get('/Sidebar.json')
     .then(function(response){
         SidebarData.value = response.data.sidebarItems
-        console.log(SidebarData.value)
+        // console.log(SidebarData.value)
     })
     .catch(function (error) {
             // handle error

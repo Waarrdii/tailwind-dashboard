@@ -1,13 +1,77 @@
 <template>
-    <div>
-        database pelanggan akan dimunculkan disini
-    </div>
+    <table class="table-fixed border border-gray-300 rounded-lg">
+        <thead class="bg-slate-50">
+            <tr>
+                <th class="border border-r-gray-300  px-2">No</th>
+                <th class="border border-r-gray-300  px-2">First Name</th>
+                <th class="border border-r-gray-300  px-2">Last Name</th>
+                <th class="border border-r-gray-300  px-2">Email</th>
+                <th class="border border-r-gray-300  px-2">Company</th>
+                <th class="border border-r-gray-300  px-2">Country</th>
+            </tr>
+        </thead>
+        <tbody class="">
+            <tr v-for="customer, id in displayItems" :key="id" class="border border-b-gray-300">
+                <td class="border border-r-gray-300 px-2">
+                    {{ customer.id }}
+                </td>
+                <td class="border border-r-gray-300  px-2">
+                    {{ customer.first }}
+                </td>
+                <td class="border border-r-gray-300  px-2">
+                    {{ customer.last }}
+                </td>
+                <td class="border border-r-gray-300  px-2">
+                    {{ customer.email }}
+                </td>
+                <td class="border border-r-gray-300  px-2 ">
+                    {{ customer.company }}
+                </td>
+                <td class=" px-2">
+                    {{ customer.country }}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+
 </template>
 
 <script setup>
+import axios from 'axios';
+import { ref, onMounted, computed } from 'vue';
+
+const dataCustomers = ref(null)
+const currentPage = ref(0)
+const itemsPerPage = ref(25)
+
+onMounted(() => {
+    axios.get('./customers.json')
+        .then(function (response) {
+            dataCustomers.value = response.data;
+            // console.log(dataCustomers.value);
+
+
+        })
+        .catch(function (error) {
+            // handle error
+            console.log(error);
+        })
+})
+
+const displayItems = computed(() => {
+    if (dataCustomers.value) {
+        return dataCustomers.value.slice(
+            currentPage.value * itemsPerPage.value,
+            (currentPage.value * itemsPerPage.value) + itemsPerPage.value
+        );
+    }
+})
+    const totalPages = computed(() => {
+        return Math.ceil(dataCustomers.value.length / itemsPerPage.value);
+    });
 
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

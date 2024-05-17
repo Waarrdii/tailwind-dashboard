@@ -3,7 +3,7 @@
     <Sidebar/>
     <div class="flex-1">
       <Navbar/>
-      <router-view></router-view>
+      <router-view class="mt-5 mx-auto"></router-view>
     </div>
   </div>  
 
