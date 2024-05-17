@@ -1,5 +1,6 @@
 <template>
-    <table class="table-fixed border border-gray-300 rounded-lg">
+    <div>
+        <table class="table-fixed border border-gray-300 rounded-lg mx-auto">
         <thead class="bg-slate-50">
             <tr>
                 <th class="border border-r-gray-300  px-2">No</th>
@@ -34,7 +35,20 @@
         </tbody>
     </table>
 
+    <div class="flex justify-center">
+        <button 
+        v-for="page, i in totalPages"
+        :key="i"
+        @click.prevent="goToPage(page)"
+        class="mt-4 mx-1 text-gray-50 rounded-full w-8 h-8 bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300">
+        {{ page }}
+    </button>
+    </div>
     
+    </div>
+    
+
+<!-- Pagination -->
 
 </template>
 
@@ -44,21 +58,22 @@ import { ref, onMounted, computed } from 'vue';
 
 const dataCustomers = ref(null)
 const currentPage = ref(0)
-const itemsPerPage = ref(25)
+const itemsPerPage = ref(10)
+let totalPages = ref(0)
 
-onMounted(() => {
-    axios.get('./customers.json')
-        .then(function (response) {
-            dataCustomers.value = response.data;
-            // console.log(dataCustomers.value);
+onMounted(async () => {
+    try {
+        const response = await axios.get('./customers.json');
+        dataCustomers.value = response.data;
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+    totalPages = computed(() => {
+        return Math.ceil(dataCustomers.value.length / itemsPerPage.value);
+    });
+    
 
-
-        })
-        .catch(function (error) {
-            // handle error
-            console.log(error);
-        })
-})
+});
 
 const displayItems = computed(() => {
     if (dataCustomers.value) {
@@ -68,9 +83,10 @@ const displayItems = computed(() => {
         );
     }
 })
-    const totalPages = computed(() => {
-        return Math.ceil(dataCustomers.value.length / itemsPerPage.value);
-    });
+
+const goToPage = (page)=> {
+  currentPage.value = page - 1; // Convert to 0-based index
+}
 
 </script>
 
