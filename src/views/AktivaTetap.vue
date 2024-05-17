@@ -1,6 +1,6 @@
 <template>
     <div>
-
+        Aktiva tetap disini
     </div>
 </template>
 

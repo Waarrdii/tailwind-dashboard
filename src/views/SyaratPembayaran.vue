@@ -1,6 +1,6 @@
 <template>
     <div>
-
+        database syarat pembayaran akan dimunculkan disini
     </div>
 </template>
 

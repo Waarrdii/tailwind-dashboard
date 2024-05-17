@@ -1,6 +1,6 @@
 <template>
     <div>
-
+        database buku pembantu utang akan muncul di sini
     </div>
 </template>
 

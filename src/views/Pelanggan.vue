@@ -1,6 +1,6 @@
 <template>
     <div>
-
+        database pelanggan akan dimunculkan disini
     </div>
 </template>
 

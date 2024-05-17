@@ -1,6 +1,6 @@
 <template>
     <div>
-        Laporan Laba Rugi departemen dll akan disini tetap disini
+ database departemen akan muncul di sini
     </div>
 </template>
 

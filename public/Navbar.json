@@ -2,16 +2,6 @@
     "navbarItems": [
         {
             "id": "1",
-            "title": "menu",
-            "list": [
-                "buat database baru",
-                "buka database",
-                "backup"
-            ],
-            "status":false
-        },
-        {
-            "id": "2",
             "title": "data",
             "list": [
                 "pelanggan",
@@ -22,7 +12,7 @@
             "status":false
         },
         {
-            "id": "3",
+            "id": "2",
             "title": "report",
             "list": [
                 "laporan keuangan",
@@ -36,15 +26,6 @@
                 "laporan departemen",
                 "Pajak",
                 "laporan tersimpan"
-            ],
-            "status":false
-        },
-        {
-            "id": "4",
-            "title": "user",
-            "list": [
-                "profil",
-                "setting"
             ],
             "status":false
         }

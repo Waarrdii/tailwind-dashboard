@@ -1,6 +1,6 @@
 <template>
     <div>
-
+        database pemasok akan dimunculkan disini
     </div>
 </template>
 

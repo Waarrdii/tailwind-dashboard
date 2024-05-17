@@ -1,6 +1,6 @@
 <template>
     <div>
-
+        database persediaan akan dimunculkan disini
     </div>
 </template>
 
