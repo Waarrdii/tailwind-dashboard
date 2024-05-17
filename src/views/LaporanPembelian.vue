@@ -1,6 +1,6 @@
 <template>
     <div>
-        ini home
+        ini halaman laporan pembelian
     </div>
 </template>
 
