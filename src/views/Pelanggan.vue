@@ -9,7 +9,7 @@
             <div class="w-80">Company</div>
             <div class="w-80">Country</div>
         </header>
-        <main class="h-80 overflow-y-scroll no-scrollbar">
+        <main class="h-80 overflow-auto no-scrollbar">
             <div class="flex" v-for="customer, id in dataCustomers" :key="id">
                 <div class="w-8 border-b border-gray-300">
                     {{ customer.id }}
