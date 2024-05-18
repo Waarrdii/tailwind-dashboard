@@ -1,43 +1,30 @@
 <template>
-    <div class="flex">
-        <div class="mx-auto border rounded-md px-4 py-2">
-        <header class="flex h-8 items-center shadow-sm border-b border-gray-300">
-            <div class="w-8">No</div>
-            <div class="w-24">First Name</div>
-            <div class="w-24">Last Name</div>
-            <div class="w-80">Email</div>
-            <div class="w-80">Company</div>
-            <div class="w-80">Country</div>
-        </header>
-        <main class="h-80 overflow-auto no-scrollbar">
-            <div class="flex" v-for="customer, id in dataCustomers" :key="id">
-                <div class="w-8 border-b border-gray-300">
-                    {{ customer.id }}
-                </div>
-                <div class="w-24 border-b border-gray-300">
-                    {{ customer.first }}
-                </div>
-                <div class="w-24 border-b border-gray-300">
-                    {{ customer.last }}
-                </div>
-                <div class="w-80 border-b border-gray-300">
-                    {{ customer.email }}
-                </div>
-                <div class="w-80 border-b border-gray-300">
-                    {{ customer.company }}
-                </div>
-                <div class="w-80 border-b border-gray-300">
-                    {{ customer.country }}
-                </div>
-            </div>
-        </main>
-    </div>
-    </div>
-
-
-
-
-    <!-- Pagination -->
+    <table>
+        <thead 
+        class="
+        bg-slate-100
+        self-start
+        sticky -top-1
+        shadow-sm border-y
+        border-slate-100">
+            <td class="border-x border-slate-100 px-2">No</td>
+            <td class="border-r border-slate-100 px-2">First Name</td>
+            <td class="border-r border-slate-100 px-2">Last Name</td>
+            <td class="border-r border-slate-100 px-2">Email</td>
+            <td class="border-r border-slate-100 px-2">Company</td>
+            <td class="border-r border-slate-100 px-2">Country</td>
+        </thead>
+        <tbody >
+            <tr v-for="customer, id in dataCustomers" :key="id">
+                <td class="border-r border-slate-100 px-2">{{ customer.id }}</td>
+                <td class="border-r border-slate-100 px-2">{{ customer.first }}</td>
+                <td class="border-r border-slate-100 px-2">{{ customer.last }}</td>
+                <td class="border-r border-slate-100 px-2">{{ customer.email }}</td>
+                <td class="border-r border-slate-100 px-2">{{ customer.company }}</td>
+                <td class="border-r border-slate-100 px-2">{{ customer.country }}</td>
+            </tr>
+        </tbody>
+    </table>
 
 </template>
 
