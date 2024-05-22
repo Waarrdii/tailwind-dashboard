@@ -8,12 +8,9 @@
   </div>
   <div class="flex-1 overflow-hidden">
     <div class="flex flex-col h-full">
-      <div class=" h-12">
         <Navbar/>
-      </div>
-      <div class="flex-1 overflow-auto ">
         <Pelanggan/>
-      </div>
+      
     </div>
   </div>
 </div>

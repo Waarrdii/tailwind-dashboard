@@ -1,31 +1,31 @@
 <template>
-    <table>
-        <thead 
-        class="
-        bg-slate-100
+    <div class="flex-1 overflow-auto mx-2 my-2 rounded-lg no-scrollbar">
+        <table class="w-full table-customers">
+            <thead class="
+        bg-slate-400
         self-start
         sticky -top-1
         shadow-sm border-y
-        border-slate-100">
-            <td class="border-x border-slate-100 px-2">No</td>
-            <td class="border-r border-slate-100 px-2">First Name</td>
-            <td class="border-r border-slate-100 px-2">Last Name</td>
-            <td class="border-r border-slate-100 px-2">Email</td>
-            <td class="border-r border-slate-100 px-2">Company</td>
-            <td class="border-r border-slate-100 px-2">Country</td>
-        </thead>
-        <tbody >
-            <tr v-for="customer, id in dataCustomers" :key="id">
-                <td class="border-r border-slate-100 px-2">{{ customer.id }}</td>
-                <td class="border-r border-slate-100 px-2">{{ customer.first }}</td>
-                <td class="border-r border-slate-100 px-2">{{ customer.last }}</td>
-                <td class="border-r border-slate-100 px-2">{{ customer.email }}</td>
-                <td class="border-r border-slate-100 px-2">{{ customer.company }}</td>
-                <td class="border-r border-slate-100 px-2">{{ customer.country }}</td>
-            </tr>
-        </tbody>
-    </table>
-
+        border-slate-300">
+                <td>No</td>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Email</td>
+                <td>Company</td>
+                <td>Country</td>
+            </thead>
+            <tbody>
+                <tr v-for="customer, id in dataCustomers" :key="id" class="hover:bg-slate-100 cursor-pointer">
+                    <td>{{ customer.id }}</td>
+                    <td>{{ customer.first }}</td>
+                    <td>{{ customer.last }}</td>
+                    <td>{{ customer.email }}</td>
+                    <td>{{ customer.company }}</td>
+                    <td>{{ customer.country }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </template>
 
 <script setup>
@@ -47,4 +47,8 @@ onMounted(async () => {
 
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.table-customers td{
+    @apply border-y border-slate-300 px-2;
+}
+</style>
