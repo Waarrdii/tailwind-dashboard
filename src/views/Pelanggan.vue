@@ -10,8 +10,20 @@
         cursor-pointer
         select-none">
                 <td >No</td>
-                <td @click="setSortColumn('first')">First Name</td>
-                <td @click="setSortColumn('last')">Last Name</td>
+                <td @click="setSortColumn('first')">
+                    <div class="flex items-baseline">
+                    <span>First Name</span>
+                    <span class="triangle-up" v-show="sortColumn === 'first' && ascendingOrder"></span>
+                    <span class="triangle-down" v-show="sortColumn === 'first' && !ascendingOrder"></span>
+                    </div>
+                </td>
+                <td @click="setSortColumn('last')">
+                    <div class="flex items-baseline">
+                    <span>Last Name</span>
+                    <span class="triangle-up" v-show="sortColumn === 'last' && ascendingOrder"></span>
+                    <span class="triangle-down" v-show="sortColumn === 'last' && !ascendingOrder"></span>
+                    </div>
+                </td>
                 <td @click="setSortColumn('email')">Email</td>
                 <td @click="setSortColumn('company')">Company</td>
                 <td @click="setSortColumn('country')">Country</td>
@@ -73,5 +85,25 @@ const sortData = ()=>{
 <style lang="scss" scoped>
 .table-customers td{
     @apply border-y border-slate-300 px-2;
+}
+
+.triangle-up {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 8px solid black;
+    margin-left: 2px;
+}
+
+.triangle-down {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 8px solid black;
+    margin-left: 2px;
 }
 </style>

@@ -1,16 +1,16 @@
 <template>
 <div class="flex max-h-screen max-w-screen" >
-  <div class="bg-gray-300 border min-w-44 box-border h-screen md:max-w-64">
+  <div class="min-w-44 box-border h-screen md:max-w-64">
     <div class="flex flex-col h-full">
-      <div class=" h-12">Title</div>
-      <div class=" bg-cyan-300 flex-1">sidebar</div>
+      <div class="flex-1">
+        <sidebar/>
+      </div>
     </div>
   </div>
   <div class="flex-1 overflow-hidden">
     <div class="flex flex-col h-full">
         <Navbar/>
-        <Pelanggan/>
-      
+        <router-view/>
     </div>
   </div>
 </div>
@@ -18,7 +18,7 @@
 
 <script setup>
 import Navbar from './components/Navbar.vue';
-import Pelanggan from './views/Pelanggan.vue';
+import Sidebar from './components/Sidebar.vue'
 
 </script>
 
