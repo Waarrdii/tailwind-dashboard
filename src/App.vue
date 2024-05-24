@@ -10,7 +10,11 @@
   <div class="flex-1 overflow-hidden">
     <div class="flex flex-col h-full">
         <Navbar/>
-        <router-view/>
+        <!-- <router-view/> -->
+        <div class="flex justify-center mt-8">
+          <FilterForm/>
+        </div>
+        
     </div>
   </div>
 </div>
@@ -19,6 +23,7 @@
 <script setup>
 import Navbar from './components/Navbar.vue';
 import Sidebar from './components/Sidebar.vue'
+import FilterForm from './components/FilterForm.vue'
 
 </script>
 

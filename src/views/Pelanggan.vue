@@ -9,7 +9,6 @@
         border-slate-300
         cursor-pointer
         select-none">
-                <td >No</td>
                 <td @click="setSortColumn('first')">
                     <div class="flex items-baseline">
                     <span>First Name</span>
@@ -24,13 +23,30 @@
                     <span class="triangle-down" v-show="sortColumn === 'last' && !ascendingOrder"></span>
                     </div>
                 </td>
-                <td @click="setSortColumn('email')">Email</td>
-                <td @click="setSortColumn('company')">Company</td>
-                <td @click="setSortColumn('country')">Country</td>
+                <td @click="setSortColumn('email')">
+                    <div class="flex items-baseline">
+                    <span>Email</span>
+                    <span class="triangle-up" v-show="sortColumn === 'email' && ascendingOrder"></span>
+                    <span class="triangle-down" v-show="sortColumn === 'email' && !ascendingOrder"></span>
+                    </div>
+                </td>
+                <td @click="setSortColumn('company')">
+                    <div class="flex items-baseline">
+                    <span>company</span>
+                    <span class="triangle-up" v-show="sortColumn === 'company' && ascendingOrder"></span>
+                    <span class="triangle-down" v-show="sortColumn === 'company' && !ascendingOrder"></span>
+                    </div>
+                </td>
+                <td @click="setSortColumn('country')">
+                    <div class="flex items-baseline">
+                    <span>Country</span>
+                    <span class="triangle-up" v-show="sortColumn === 'country' && ascendingOrder"></span>
+                    <span class="triangle-down" v-show="sortColumn === 'country' && !ascendingOrder"></span>
+                    </div>
+                </td>
             </thead>
             <tbody>
                 <tr v-for="customer, id in copyCustomers" :key="id" class="hover:bg-slate-100 cursor-pointer">
-                    <td>{{ customer.id }}</td>
                     <td>{{ customer.first }}</td>
                     <td>{{ customer.last }}</td>
                     <td>{{ customer.email }}</td>
