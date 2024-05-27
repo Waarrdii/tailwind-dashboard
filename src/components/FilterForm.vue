@@ -1,20 +1,24 @@
 <template>
-    <form class="bg-slate-100 rounded-lg">
-        <div class="flex justify-betwen items-center px-2">
-            <input class="m-2 rounded-md border border-slate-200 shadow-sm" type="text" name="" id="" placeholder="Search User">
-            <button class="bg-blue-600 rounded-md px-2 text-white"><img src="/icons/search.svg" alt="search user"></button>
-            <div class="relative">
-                <div class="flex cursor-pointer select-none"><img src="/icons/filter.svg" alt="filter"> <span>Filter</span></div>
-                <div class="absolute h-20 w-40 bg-slate-100 border-slate-200 border mt-3 rounded">test</div>
-            </div>
-        </div>       
+    <form class="bg-slate-100 rounded-lg flex items-center">
+        <label class="flex justify-betwen items-center px-2 relative">
+            <img class="absolute right-6" src="/icons/search.svg" alt="search user">
+            <input class="m-2 rounded-md border border-slate-200 shadow-sm" type="text" name="" id=""
+                placeholder="Search User">
+        </label>
+        <vue-tailwind-datepicker :formatter="formatter" v-model="dateValue" placeholder="Filter Tanggal" />
     </form>
 </template>
 
 <script setup>
+import { ref } from "vue";
+import VueTailwindDatepicker from "vue-tailwind-datepicker";
+
+const dateValue = ref([]);
+const formatter = ref({
+    date: 'DD MMM YYYY',
+    month: 'MMM',
+})
 
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
