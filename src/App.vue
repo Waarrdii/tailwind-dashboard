@@ -10,11 +10,8 @@
   <div class="flex-1 overflow-hidden">
     <div class="flex flex-col h-full">
         <Navbar/>
-        <!-- <router-view/> -->
-        <div class="flex justify-center mt-8">
-          <FilterForm/>
-        </div>
-        
+        <router-view/>
+            
     </div>
   </div>
 </div>

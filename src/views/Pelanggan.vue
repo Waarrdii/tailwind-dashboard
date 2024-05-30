@@ -1,5 +1,6 @@
 <template>
     <div class="flex-1 overflow-auto mx-2 my-2 rounded-lg no-scrollbar">
+        <FilterForm/>
         <table class="w-full table-customers">
             <thead class="
         bg-slate-400
@@ -61,6 +62,7 @@
 <script setup>
 import axios from 'axios';
 import { ref, onMounted } from 'vue';
+import FilterForm from '../components/FilterForm.vue';
 
 const dataCustomers = ref(null);
 const copyCustomers = ref(null);
