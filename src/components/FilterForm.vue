@@ -11,6 +11,9 @@
         <div class="bg-slate-100 mx-3">
             <vue-tailwind-datepicker :formatter="formatter" v-model="dateValue" placeholder="Filter Tanggal"  />
         </div>
+        <div>
+            <input type="checkbox" name="country" id="country"><label for="country">country</label>
+        </div>
     </form>
 </template>
 
